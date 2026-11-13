@@ -1,4 +1,16 @@
 (() => {
+  const navigation = performance.getEntriesByType('navigation')[0];
+  if (navigation?.type === 'reload') {
+    const previousScrollRestoration = history.scrollRestoration;
+    history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', () => {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        history.scrollRestoration = previousScrollRestoration;
+      });
+    }, { once: true });
+  }
+
   const abstractContent = document.getElementById('abstract-content');
   const abstractToggles = document.querySelectorAll('[data-abstract-toggle]');
 

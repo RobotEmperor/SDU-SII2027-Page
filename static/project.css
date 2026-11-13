@@ -29,12 +29,17 @@ body {
   padding-top: 4.5rem;
 }
 
+.publication-header .container.is-max-desktop {
+  max-width: 1125px;
+}
+
 .publication-title {
   letter-spacing: -0.025em;
   line-height: 1.08;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1050px;
+  max-width: 1125px;
+  text-wrap: balance;
 }
 
 .publication-venue {
@@ -118,6 +123,10 @@ body {
 
 #abstract .content,
 #overview .content,
+#tactile-aware-rl .content,
+#simulation .content,
+#supplementary-ablation .content,
+#limitations .content,
 #training .content,
 #online-error-bound-estimation .content,
 #videos .content,
@@ -216,18 +225,181 @@ body {
   max-width: 900px;
 }
 
+.overview-figure figcaption,
+.adaptation-figure figcaption,
+.experimental-results-figure figcaption,
+.supplementary-figure figcaption,
+.simulation-figure figcaption {
+  font-size: 1.125rem;
+  max-width: 100%;
+  text-align: justify;
+  width: 100%;
+}
+
 .framework-figure {
   margin-top: 2.5rem;
   max-width: 820px;
 }
 
+#adaptation > .container,
 #overview > .container,
+#tactile-aware-rl > .container,
+#simulation > .container,
+#experiments > .container,
+#supplementary-ablation > .container,
+#limitations > .container,
 #training > .container,
 #online-error-bound-estimation > .container {
   max-width: 1125px;
 }
 
+.adaptation-section video {
+  background: #111820;
+  border-radius: 12px;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+#tactile-aware-rl .method-subheading,
+#simulation .method-subheading {
+  line-height: 1.4;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.method-equation {
+  margin: 1.5rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.25rem;
+  text-align: center;
+}
+
+.method-equation mjx-container[display="true"] {
+  margin: 0.75rem 0;
+}
+
+.method-details {
+  margin: 1.5rem 0;
+}
+
+.method-details > summary {
+  align-items: center;
+  border-radius: 4px;
+  color: #214d73;
+  cursor: pointer;
+  display: flex;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0.35rem 0.5rem;
+  width: fit-content;
+}
+
+.method-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.method-details > summary strong {
+  color: inherit;
+}
+
+.method-details > summary:hover {
+  background: #eef6ff;
+}
+
+.method-details > summary:focus-visible {
+  outline: 2px solid #214d73;
+  outline-offset: 2px;
+}
+
+.details-less,
+.method-details[open] .details-more {
+  display: none;
+}
+
+.method-details[open] .details-less {
+  display: inline;
+}
+
+.method-details[open] > summary svg {
+  transform: rotate(180deg);
+}
+
+.details-content {
+  margin-top: 1.25rem;
+}
+
+.observation-details,
+.simulation-results {
+  margin-top: 2.5rem;
+}
+
+#tactile-aware-rl .observation-details .method-subheading,
+#simulation .simulation-details .method-subheading {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.details-toggle {
+  align-items: center;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: normal;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.reward-table-scroll {
+  margin: 2rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.method-content .reward-table {
+  font-size: 1.125rem;
+  margin: 0;
+  text-align: left;
+}
+
+.method-content .reward-table th,
+.method-content .reward-table td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.reward-table thead {
+  background: var(--soft);
+}
+
+.reward-table tbody th {
+  font-weight: normal;
+}
+
+.reward-table caption {
+  caption-side: bottom;
+  color: var(--muted);
+  line-height: 1.55;
+  padding-top: 1rem;
+  text-align: left;
+  white-space: normal;
+}
+
+.method-equation:focus-visible,
+.experimental-table-scroll:focus-visible,
+.reward-table-scroll:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 2px;
+}
+
 .overview-figure,
+.simulation-figure,
+.supplementary-figure,
 .training-figure,
 .error-bound-figure {
   margin-top: 1.5rem;
@@ -235,10 +407,50 @@ body {
 }
 
 .overview-figure img,
+.simulation-figure img,
+.supplementary-figure img,
 .training-figure img,
 .error-bound-figure img,
 .delta-analysis-figure img {
   width: 100%;
+}
+
+.supplementary-figure {
+  margin-bottom: 2rem;
+}
+
+.experiment-setup {
+  display: flow-root;
+}
+
+.experiment-setup .experiment-setup-figure {
+  float: left;
+  margin: 0 2rem 1rem 0;
+  width: 40%;
+}
+
+.experiment-setup-figure img {
+  width: 100%;
+}
+
+.simulation-figure-grid {
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+}
+
+.simulation-figure-grid > a {
+  display: block;
+  min-width: 0;
+}
+
+.training-object-label {
+  color: var(--ink);
+  display: block;
+  font-family: "Times New Roman", serif;
+  font-size: 1.25rem;
+  margin-top: 0.75rem;
 }
 
 .delta-analysis {
@@ -261,6 +473,17 @@ body {
 
 .delta-analysis-copy strong {
   color: inherit;
+}
+
+.adaptability-callout {
+  margin-top: 2.5rem;
+}
+
+.adaptability-callout .title {
+  color: inherit;
+  line-height: 1.4;
+  margin-top: 0;
+  text-align: left;
 }
 
 .delta-analysis-figure {
@@ -494,6 +717,67 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.experiment-subheading {
+  margin-top: 2.5rem;
+}
+
+.experimental-results-figure {
+  margin-top: 2.5rem;
+}
+
+.experimental-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.experimental-results-table {
+  border-bottom: 3px double #aab4ae;
+  border-top: 3px double #aab4ae;
+  font-size: 1.125rem;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+  min-width: 960px;
+}
+
+.experimental-results-table th,
+.experimental-results-table td {
+  border-bottom: 0;
+  padding: 0.55rem 0.65rem;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.experimental-results-table thead {
+  background: var(--soft);
+}
+
+.experimental-results-table thead th {
+  border-bottom: 1px solid var(--line);
+}
+
+.experimental-results-table tbody th {
+  font-weight: normal;
+  text-align: left;
+}
+
+.experimental-results-table .metric-group-start {
+  border-left: 1px solid var(--line);
+}
+
+.experimental-results-table tbody + tbody tr:first-child > * {
+  border-top: 1px solid var(--line);
+}
+
+.experimental-results-table .result-means td {
+  padding-bottom: 0.15rem;
+}
+
+.experimental-results-table .result-standard-deviations td {
+  font-size: 0.8em;
+  padding-top: 0;
+}
+
 .video-caption {
   padding: 1.15rem 1.25rem 1.3rem;
 }
@@ -530,6 +814,16 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .experiment-setup .experiment-setup-figure {
+    float: none;
+    margin: 0 0 1.5rem;
+    width: 100%;
+  }
+
+  .simulation-figure-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .delta-analysis {
     grid-template-columns: minmax(0, 1fr);
   }

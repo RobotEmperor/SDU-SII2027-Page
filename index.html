@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Control">
+  <meta name="description" content="Tactile-Aware Reinforcement Learning for Adaptive Force Control in Dexterous Lid Opening">
   <meta name="keywords" content="robotics">
-  <meta property="og:title" content="Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Control">
-  <meta property="og:description" content="Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Control">
+  <meta property="og:title" content="Tactile-Aware Reinforcement Learning for Adaptive Force Control in Dexterous Lid Opening">
+  <meta property="og:description" content="Tactile-Aware Reinforcement Learning for Adaptive Force Control in Dexterous Lid Opening">
   <meta property="og:image" content="https://robotemperor.github.io/SDU-SII2027-Page/static/images/mir_picture.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://robotemperor.github.io/SDU-SII2027-Page/">
-  <title>Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Controls</title>
+  <title>Tactile-Aware Reinforcement Learning for Adaptive Force Control in Dexterous Lid Opening</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +18,10 @@
   <!-- Keep local assets relative so this page works under a GitHub Pages project path. -->
   <link rel="stylesheet" href="./css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/project.css?v=20260922-delta-125">
-  <script src="./static/project.js?v=20260922-abstract-toggle" defer></script>
+  <link rel="stylesheet" href="./static/project.css?v=20261113-limitations">
+  <script src="./static/project.js?v=20261113-reload-scroll" defer></script>
+  <script src="./static/mathjax-config.js?v=20261113-method" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-chtml.js" defer></script>
 </head>
 
 <body>
@@ -28,14 +30,14 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Control</h1>
-            <h2 class="title is-4 publication-venue">ICRA 2027</h2>
+            <h1 class="title is-1 publication-title">Tactile-Aware Reinforcement Learning for Adaptive Force Control in Dexterous Lid Opening</h1>
+            <h2 class="title is-4 publication-venue">SII 2027</h2>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Anonymous Authors</span>
+              <span class="author-block">Yitaek Kim, Casper Hewson Rask, Haegu Lee and Christoffer Sloth</span>
             </div>
             <div class="is-size-5 publication-affiliation">
-              Anonymous Affiliation
+              SDU Robotics, The Maersk Mc-Kinney Moller Institute, University of Southern Denmark, Denmark
             </div>
 
             <div class="publication-links">
@@ -48,6 +50,17 @@
                     </svg>
                   </span>
                   <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark" href="https://youtu.be/Hntquw0Q4Lo" target="_blank" rel="noopener noreferrer">
+                  <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+                      <rect x="3" y="5" width="18" height="14" rx="3" />
+                      <path d="m10 8 6 4-6 4z" fill="currentColor" stroke="none" />
+                    </svg>
+                  </span>
+                  <span>Full Video</span>
                 </a>
               </span>
               <span class="link-block">
@@ -105,11 +118,28 @@
           </div>
           <div class="content has-text-justified" id="abstract-content" role="region" aria-labelledby="abstract-title" hidden>
             <p>
-              Autonomous robotic systems require safety-critical control that can quickly respond to complex and changing environments. In this paper, we propose a robust model-free safety-critical control framework that integrates a neural operator with Poisson-based safety functions (PSFs) for real-time collision avoidance. The neural operator enables fast inference of a PSF without solving a partial differential equation (PDE) repeatedly, mitigating the computational burden. However, approximation of the PDE solution introduces errors in both the predicted safety function and its derivatives; thus, we derive a worst-case robust safety condition under bounded approximation errors. Since online computation of worst-case error bounds is challenging in changing environments, we further propose a practical online error bound estimation that leverages obstacle-boundary measurements from onboard sensors (e.g. LiDAR). Lastly, we validate the proposed framework through simulations and experiments on a mobile robot, showing that the Fourier neural operator-based controller achieves efficient collision avoidance while providing accurate real-time PSF prediction.
+               Existing Reinforcement Learning (RL) approaches for dexterous manipulation focus on task completion or finger gaiting, but they do not fully explore how tactile sensing should be used for improving contact-rich manipulation. In this work, we investigate force adaptation in a widely studied benchmark, lid opening, for dexterous manipulation. Prior work for lid opening has been conducted with relatively low rotational resistance; thus, existing reward designs based on rotation progress can handle those cases, but fail under different levels of rotational resistance. To address this, we propose a tactile-aware RL framework that incorporates the spatial layout of tactile sensors into the reward design for learning adaptive control policies. Secondly, we introduce a tactile-aware observation space that includes contact force, slip, and rotational resistance, which enables the policy to achieve adaptive force finger gaiting. The proposed RL framework is evaluated in both simulation and on an instrumented real-world setup with a Shadow Robot hand. The results show that the proposed framework achieves superior task performance by adaptive force finger gaiting, with more than twice the rotational score compared to the baseline in the real setup under high rotational resistance.
             </p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  
+
+  <section class="section adaptation-section" id="adaptation" aria-label="Adaptive force control demonstration">
+    <div class="container is-max-desktop">
+      <figure class="paper-figure adaptation-figure">
+        <video controls playsinline autoplay muted loop preload="metadata" width="1280" height="660"
+               aria-label="Adaptive dexterous lid opening demonstration" aria-describedby="adaptation-caption">
+          <source src="./medias/adaptation_cropped.mp4" type="video/mp4">
+          Your browser does not support the video tag. <a href="./medias/adaptation_cropped.mp4">Watch the adaptation video.</a>
+        </video>
+        <figcaption id="adaptation-caption">
+          Tac2Motion under varying rotational resistance over ten trials. We generate time-varying rotational resistance via motor current control on the instrumented setup. We observed that Tac2Motion adjusts its contact force based on the resistance level, achieving $317^{\circ} \pm{13.7}^{\circ}$ of lid rotation for 120s.
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -118,104 +148,454 @@
       <h2 class="title is-3 has-text-centered">Overview</h2>
       <div class="content has-text-justified">
         <p>
-          We develop a robust model-free safety-critical control framework that leverages a neural operator to rapidly
-          infer a PSF and integrate it into the forward invariance condition as shown in the
-          <a href="#overview-figure">overview figure</a>.
+          We study adaptive force control policies for dexterous manipulation via RL on a lid opening task. The overview of this work is shown in the
+          <a href="#overview-figure">overview figure</a>. The core contributions of this work are outlined in the following: 
         </p>
         <p>
-          <strong>1) Fast Poisson safety function (PSF) inference</strong>: We use a neural operator to learn a solution
-          operator for the Poisson PDE, allowing fast PSF construction across varying environments without repeatedly
-          solving computationally expensive PDEs.
+          <strong>1) </strong>: We introduce a structured tactile-aware reward formulation that considers the spatial location of tactile sensors and induces adaptive and distributed contact force across all fingers, and smooth finger gaiting.
         </p>
         <p>
-          <strong>2) Robust model-free safety-critical control</strong>: We derive a robust model-free safety-critical
-          control design that explicitly accounts for bounded approximation errors in the inferred safety function and
-          its derivatives, providing worst-case safety guarantees without requiring explicit knowledge of the robot
-          dynamics.
+          <strong>2) </strong>: We consider tactile observations (e.g. contact force) used for policy input to infer adaptive force finger gaiting.
         </p>
         <p>
-          <strong>3) Online error bound estimation</strong>: In practice, obtaining worst-case approximation error bounds
-          online is non-trivial; thus we propose local approximation error estimation that exploits measurements of
-          obstacle boundaries from onboard perception sensors (e.g. LiDAR), which are then used as robust margins for
-          practical deployment in the real world.
+          <strong>3) </strong>: We introduce an instrumented lid-opening setup that approximates slip and measures rotational resistance, providing a reproducible testbed for evaluating adaptability in contact-rich dexterous manipulation. 
         </p>
-      </div>
+        <p>
+          <strong>4) </strong>: Lastly, we validate the proposed approach through systematic simulation and real-world experiments on Shadow Robot hand under different levels of rotational resistance. In addition, we demonstrate that the proposed approach can be applied in other tasks, such as lever opening in the simulation.
+        </p>
+        <p>
+          Importantly, this work uses tactile sensor information for reward design and policy observations, rather than aiming to learn a general tactile representation model that infers environmental parameters. Our focus is to learn and demonstrate an adaptive force finger gaiting policy for contact-rich in-hand manipulation and its validation on a real-world setup.
+        </p>
+
+
+      
+        </div>
       <figure class="paper-figure overview-figure" id="overview-figure">
         <a href="./medias/figures/homepage_overview.pdf" target="_blank" rel="noopener noreferrer"
            aria-label="Open the overview diagram PDF in a new tab">
-          <img src="./medias/figures/homepage_overview.svg" width="1800" height="1500" loading="lazy"
+          <img src="./medias/figures/homepage_overview.svg" width="1600" height="900" loading="lazy"
                alt="Framework overview: LiDAR-based neural operator inference, online error bound estimation, and robust safety-critical robot control, with prediction accuracy and computation time comparisons.">
         </a>
+        <figcaption>
+          <strong>Figure 1.</strong>
+          (Top) snapshots of real-world lid opening deployments under rotational resistance on the instrumented setup. Heatmaps indicate tactile sensor readings at each finger, showing that the proposed policy increases contact pressure under higher rotational resistance while maintaining smooth finger gaiting. (Bottom) system architecture of Tac2Motion, including model training and transferring for the proposed adaptive control policy. 
+        </figcaption>
+
       </figure>
     </div>
   </section>
 
-  <section class="section content-section" id="training">
+  <section class="section content-section" id="tactile-aware-rl">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Training</h2>
-      <h3 class="section-question">
-        How to obtain
-        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="h hat of y, t">
-          <mrow>
-            <mover accent="true"><mi>h</mi><mo>^</mo></mover>
-            <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
-          </mrow>
-        </math>
-        and
-        <span class="question-formula"><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="gradient of h hat of y, t">
-          <mrow>
-            <mo>∇</mo><mover accent="true"><mi>h</mi><mo>^</mo></mover>
-            <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
-          </mrow>
-        </math>?</span>
-      </h3>
-      <div class="content has-text-justified">
-        <p>
-          From each occupancy map, we compute the corresponding forcing term,
-          <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>,
-          and subsequently solve
-          <a href="./paper/paper.pdf#page=2" target="_blank" rel="noopener noreferrer"
-             aria-label="Equation 3 in the paper, opens in a new tab">Eq. (3)</a>
-          using successive over relaxation (SOR)
-          <a href="./paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer"
-             aria-label="Reference 12 in the paper, opens in a new tab">[12]</a>
-          to obtain the corresponding PSF,
-          <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>h</mi></math>
-          with respect to
-          <math xmlns="http://www.w3.org/1998/Math/MathML"><mi class="math-vector" mathvariant="normal">y</mi></math>.
-          We then construct the dataset,
-          <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="D equals the set of tuples f i, h i, gradient h i, indexed by i up to N">
-            <mrow>
-              <mi>𝒟</mi><mo>=</mo><mo>{</mo><mo>(</mo>
-              <msub><mi>f</mi><mi>i</mi></msub><mo>,</mo>
-              <msub><mi>h</mi><mi>i</mi></msub><mo>,</mo>
-              <mo>∇</mo><msub><mi>h</mi><mi>i</mi></msub>
-              <mo>)</mo><msubsup><mo>}</mo><mi>i</mi><mi>N</mi></msubsup>
-            </mrow>
-          </math>
-          where <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math>
-          denotes the number of samples. Afterwards, the neural operator (modeled using either DeepONet or FNO)
-          is trained in a supervised manner by minimizing the loss function,
-          <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="L equals L subscript h plus lambda subscript gradient h times L subscript gradient h">
-            <mrow>
-              <mi>ℒ</mi><mo>=</mo><msub><mi>ℒ</mi><mi>h</mi></msub><mo>+</mo>
-              <msub><mi>λ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub>
-              <msub><mi>ℒ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub>
-            </mrow>
-          </math>.
-        </p>
+      <h2 class="title is-3 has-text-centered">Tactile-Aware RL for Adaptive Dexterous Lid Opening</h2>
+      <div class="content has-text-justified method-content">
+        <p>To this end, we propose a tactile-aware reinforcement learning framework for adaptive dexterity as follows:</p>
+        <p><strong>1) Design a structured tactile aware reward</strong> that encourages adaptive and distributed contact forces across all fingers, and stable finger gaiting while using the spatial information of tactile sensors (e.g. locations of sensors).</p>
+        <p><strong>2) Construct a tactile-aware observation space</strong> that provides the policy with contact force, slip, and rotational resistance information, enabling the policy to output adaptive force finger gaiting behavior.</p>
+        <p><strong>3) Design an instrumented lid-opening testbed in real-world</strong> that approximates slip and rotational resistance, both of which are non-trivial to be estimated during dynamic finger gaiting. The setup provides a reproducible platform for evaluating adaptability in contact-rich dexterous manipulation.</p>
+        <p>Note that this problem is formulated as Markov Decision Process with partially observable states in a simulation and real-world setup.</p>
+        <h3 class="title is-4 method-subheading" id="reward-design">Reward Design for Adaptive Dexterous Lid Opening</h3>
+        <p>We design the following reward to induce the adaptive torsional hand motion to open a lid. Reward functions include rotation of a lid, contact states, and multiple penalty terms. In particular, we formulate contact states derived from the spatial information of each tactile sensor element to provide a more precise description of local contact conditions, beyond the conventional contact representation based on a single fingertip–object distance <a href="./paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer" aria-label="Reference 7 in the paper">[7]</a>.</p>
+        <details class="method-details reward-details" id="reward-details">
+          <summary aria-controls="reward-details-content">
+            <strong>Reward details:</strong>
+            <span class="details-more">more</span>
+            <span class="details-less">less</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+          <div class="details-content" id="reward-details-content">
+            <p><em><strong>1) Rotation Reward</strong></em>: We define the following to promote rotation: $r_{\textnormal{rr}} = \Delta q^{\textnormal{lid}}$, where $\Delta q_{\textnormal{lid}} = q_{t}^{\textnormal{lid}} - q_{t-1}^{\textnormal{lid}}$ is the rotation difference between the rotation angles of the lid during one step transition.</p>
+            <p><em>2) <strong>Tactile-Spatial Contact Reward</strong></em>: To maximize the use of tactile sensing and enhance local contact representations during training, we formulate contact reward function based on multiple distances between each tactile sensor and an object. Let us define the two frames as follows: $O^b = \{O^{b,1}, \ldots, O^{b,M}\}, \quad O^{b,m}\in \mathbb{R}^3, \quad  m\in\{1,\ldots,M\},
+                 $ and</p>
+            <div class="method-equation" role="region" tabindex="0" aria-label="Method equation">
+            \[
+            F^{T}_i = \{F^{T_ 1}_i, \ldots, F^{T_ k}_i\}, \quad F^{T_ j}_i \in \mathbb{R}^{3}, \quad  j\in\{1,\ldots,k\},
+            \]
+            </div>
+            <p>where  $O^b$ denotes the set of the positions of the $M$ contact guide frames attached to the lid <a href="./paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer" aria-label="Reference 7 in the paper">[7]</a>, and $F^{T}_i$ indicates the set of $k$ tactile sensors points on the $i-$th finger, $ i\in\{1,\dots,5\}$, as shown in <a href="./paper/paper.pdf#page=3" target="_blank" rel="noopener noreferrer">Fig. 2 in the paper</a>.
+            For an each sensor, $F^{T_j}_i$, the closest distance to the contact frames is obtained based on Euclidean distance, $d^j_i(O^b,F^{T_j}_i) = \min_{m\in \{1,\ldots,M\}} {||O^{b,m}-F^{T_j}_i||}$ as shown in <a href="./paper/paper.pdf#page=3" target="_blank" rel="noopener noreferrer">Fig. 2 in the paper</a>. To detect contact, we set the contact threshold, $\epsilon\in \mathbb{R}_{&gt;0}$, and then define the contact distance of each tactile sensor, $p_{d^j_i}$ for $\forall i,j$ as:</p>
+            <div class="method-equation" role="region" tabindex="0" aria-label="Method equation">
+            \[
+            p_{d^j_i} =\begin{cases}
+            	    \frac{\alpha}{d^j_i+0.01}, &amp; d^j_i\leq \epsilon, \\
+                        0, &amp; \text{otherwise},
+            		 \end{cases}
+            \]
+            </div>
+            <p>where $\alpha\in\mathbb{R}_{&gt;0}$ is positive scaling factor. $d^j_i$ larger than the predefined contact threshold are set to zero, whereas the others are transformed into scaled inverse values. $p_{d^j_i}$ are then summed for all $k$ tactile sensors of each finger, $i$ to obtain the contact representation as follows: $G_i \triangleq \sum_{j=1}^{k} p_{d^j_i}, \quad j\in\{1,\ldots,k\}$, where $G_i \in \mathbb{R}_{\geq 0}$ is local contact quality, which indicates how broadly contact is formed across the tactile sensors. We include $G_i$ in the observation space, as a compact measure of contact, enabling the policy to adjust contact during training. We then define a contact state as</p>
+            <div class="method-equation" role="region" tabindex="0" aria-label="Method equation">
+            \[
+            \quad \textnormal{C}_i =\begin{cases}
+            	    1.0, &amp; G_i &gt; 0, \\
+                        0, &amp; \text{otherwise}.
+            		 \end{cases}
+            \]
+            </div>
+            <p>Consequently, we derive the contact state reward as $r_{\textnormal{c}} = \sum_{i=1}^{5} \textnormal{C}_i$. The reward is defined with the hyperparameters to balance each objective and stabilize learning: $r \doteq \lambda_{\textnormal{rr}}r_{\textnormal{rr}} + \lambda_{\textnormal{c}}r_{\textnormal{c}}$, where $\lambda_{\textnormal{rr}}, \lambda_{\textnormal{c}} \in \mathbb{R}_{&gt; 0}$.</p>
+            <p>Adding penalty terms helps to discourage the undesired behaviors such as incorrect rotation direction, excessive contact forces, jerky finger motions, and inefficient work. We consider these penalty terms in the following:</p>
+            <p><em><strong>1) Adaptive Contact Force Penalty</strong></em>: To induce adaptive behavior to object dynamics, such as rotational resistance and surface friction, we introduce the following variable contact force penalty term:</p>
+            <div class="method-equation" role="region" tabindex="0" aria-label="Adaptive contact force penalty">
+            \begin{equation}
+                r_{\textnormal{adapt}}
+                = -g_t {f}_{\textnormal{tips}},
+                \qquad
+                g_t = \operatorname{clamp}(\hat{\beta}, 0, 10), \label{adaptive_term}
+            \end{equation}
+            </div>
+            <p>with $\hat{\beta} = \exp(\beta - 2), \beta = \frac{1}{l + 0.02}$, where ${f}_{\textnormal{tips}} \in \mathbb{R}$ denotes the normalized sum of the contact force over all fingertips, and $l \in [0,1]$ denotes the level of resistance. Specifically, larger values of $l$ correspond to more challenging settings, such as objects with lower surface friction and higher rotational resistance.</p>
+            <p><em><strong>2) Force Distribution Penalty</strong></em>: To avoid excessive contact force on a single finger and prevent hardware damage, we include the following force distribution penalty term: $r_{\textnormal{distr}} =  -\sum_{i=1}^{5} ||f_{i}-\mu||^2,$ where $f_i \in \mathbb{R}$ is the magnitude of contact force at each finger, and $\mu \in \mathbb{R}$ is the average magnitude of contact force of all fingers.</p>
+            <p><em><strong>3) Gaiting Penalty</strong></em>: We define gaiting penalty to guide an efficient torsional motion. Forces applied by fingers should be able to produce a positive torque toward the opening direction of a lid. The term is defined as: $r_{\textnormal{gaiting}} =  \sum_{i=1}^{5} \textnormal{sign}(w^z_i)\textnormal{C}_i,$ where $w^z_i$ is the $z$-axis component of $\bm{w}_i \in \mathbb{R}^3$ which is the cross product between $\bm{v}_i \in \mathbb{R}^3$ and $\bm{p}^{\textnormal{center}}_i \in \mathbb{R}^3$, $\bm{w}_i = \bm{v}_i \times \bm{p}^{\textnormal{center}}_i$. $\bm{v}_i$ is the velocity of the tip of each finger, and $\bm{p}^{\textnormal{center}}_i$ is the vector from the center of the lid and each tip. Since the base frame is with respect to the center of the lid, only z-component of $\bm{w}_i$ is used to decide the resulting torque directions by each finger. This term ensures that fingers can move simultaneously in the opening direction of the lid, while keeping contact.</p>
+          </div>
+        </details>
+        <p>Additional penalty terms include angle direction, action, work efficiency penalties. The axis of the lid should be aligned with the axis of the rotation movement of the lid from the fingers. The angle direction penalty term is defined as $r_{\textnormal{angle}} = -\arccos(\langle \bm{z}_{\textnormal{lid}}, \bm{z}\rangle )$ <a href="./paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer" aria-label="Reference 7 in the paper">[7]</a> where $\bm{z}_{\textnormal{lid}}, \bm{z} \in \mathbb{R}^3$ are the axis of the lid and the desired rotation direction, respectively. To get around abrupt actions, we consider the action penalty which is defined as: $r_{\textnormal{action}} = - ||\bm{a}_t||^2,$ where $\bm{a}_t \in \mathbb{R}^{22}$ is the relative desired joint position. Work efficiency penalty is defined as: $r_{\textnormal{work}} = - \sum|\bm{\tau}_t^{\top}\Delta \bm{q}_t|,$ where $\bm{\tau}_t \in \mathbb{R}^{22}$ is the control torque and $\Delta\bm{q}_t\in \mathbb{R}^{22}$ is the change of joint positions <a href="./paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer" aria-label="Reference 7 in the paper">[7]</a>.
+        The final reward is defined as:</p>
+        <div class="method-equation" role="region" tabindex="0" aria-label="Final reward">
+        \begin{align}
+            r_{\textnormal{{final}}} \doteq r +  r_{\textnormal{adapt}} +  \lambda_{\textnormal{distr}}r_{\textnormal{distr}}+\lambda_{\textnormal{gaiting}}r_{\textnormal{gaiting}} \nonumber\\
+            + \lambda_{\textnormal{angle}}r_{\textnormal{angle}}
+            +\lambda_{\textnormal{action}}r_{\textnormal{action}} + \lambda_{\textnormal{work}}r_{\textnormal{work}},\label{f_r}
+        \end{align}
+        </div>
+        <p>where $r =\lambda_{\textnormal{rr}} r_{\textnormal{rr}} + \lambda_{\textnormal{c}} r_{\textnormal{c}}$, and  $\lambda_{\textnormal{distr}}, \lambda_{\textnormal{gaiting}}, \lambda_{\textnormal{angle}}$, $\lambda_{\textnormal{action}}, \lambda_{\textnormal{work}} \in \mathbb{R}_{&gt;0}.$ Note that $r_{\textnormal{adapt}}$ already includes an adaptive gain, $g_t$ as defined in the term, $\eqref{adaptive_term}$. The summary of reward functions is described in <a href="#summary-reward">Table I</a>.</p>
+        <div class="reward-table-scroll" role="region" aria-labelledby="reward-table-caption" tabindex="0">
+        <table class="table is-fullwidth reward-table" id="summary-reward">
+        <caption id="reward-table-caption"><strong>Table I.</strong> Reward functions for learning adaptive force finger gaiting.</caption>
+        <thead><tr><th scope="col">Reward</th><th scope="col">Definition</th><th scope="col">Hyperparameter</th><th scope="col">Value</th></tr></thead>
+        <tbody>
+        <tr><th scope="row">$r_{\textnormal{rr}}$</th><td>$\triangleq \Delta q^{\textnormal{lid}}$</td><td>$\lambda_{\textnormal{rr}}$</td><td>$1000.0$</td></tr>
+        <tr><th scope="row">$r_{\textnormal{c}}$</th><td>$ \triangleq \sum_{i=1}^{5} \textnormal{C}_i$</td><td>$\lambda_{\textnormal{cc}}$</td><td>$2.0$</td></tr>
+        <tr><th scope="row">$r_{\textnormal{adapt}}$</th><td>$\triangleq -g_t {f}_{\textnormal{tips}}$</td><td>-</td><td>-</td></tr>
+        <tr><th scope="row">$r_{\textnormal{distr}}$</th><td>$\triangleq -\sum_{i=1}^{5} ||f_{i}-\mu||^2$</td><td>$\lambda_{\textnormal{distr}}$</td><td>$30.0$</td></tr>
+        <tr><th scope="row">$r_{\textnormal{gaiting}}$</th><td>$\triangleq \sum_{i=1}^{5} \textnormal{sign}(w^z_i)\textnormal{C}_i$</td><td>$\lambda_{\textnormal{gaiting}}$</td><td>$1.0$</td></tr>
+        <tr><th scope="row">$r_{\textnormal{angle}}$</th><td>$\triangleq -\arccos(\langle \bm{z}_{\textnormal{lid}}, \bm{z}\rangle )$</td><td>$\lambda_{\textnormal{angle}}$</td><td>$20.0$</td></tr>
+        <tr><th scope="row">$r_{\textnormal{action}}$</th><td>$\triangleq  - ||\bm{a}_t||^2$</td><td>$\lambda_{\textnormal{action}}$</td><td>$0.0001$</td></tr>
+        <tr><th scope="row">$r_{\textnormal{work}}$</th><td>$\triangleq  - \sum|\bm{\tau}_t^{\top}\Delta \bm{q}_t|$</td><td>$\lambda_{\textnormal{work}}$</td><td>$1.0$</td></tr>
+        </tbody>
+        </table>
+        </div>
+        <details class="method-details observation-details" id="observation-details">
+          <summary aria-controls="observation-details-content">
+            <h3 class="title is-4 method-subheading" id="observation-space">
+              <span>Observation Space Details</span>
+              <span class="details-toggle">
+                <span class="details-more">more</span>
+                <span class="details-less">less</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </span>
+            </h3>
+          </summary>
+          <div class="details-content" id="observation-details-content">
+            <p>The policy observes $\bm{o}_t$ including proprioceptive information, contact and rotational resistance. Proprioceptive information involves current joint positions, $\bm{q}_t \in \mathbb{R}^{22}$ and previous joint target position, $\bm{q}^d_{t-1}$. These observations are normalized using the minimum and maximum joint limits. Contact state contains local contact quality, ${G}=\left[G_1, G_2, \dots, G_5\right]$, and total contact force magnitude, ${f}_{\textnormal{tips}}$ from $\eqref{adaptive_term}$ which is also normalized to the range $[0,1]$. In addition, we also define fingertip slippage, $\textnormal{S} = \left[s_1, s_2, \dots, s_5\right]$. Each element represents the relative tangent velocity magnitude, defined as ${s}_i = \left\| \bm{v}_{\textnormal{tip},i} - \bm{v}_{o} \right\|$, where $\bm{v}_{\textnormal{tip,i}}$ and $\bm{v}_o$ denote tangential velocities of fingertip and the lid, respectively.
+            Rotational resistance is denoted as $\textnormal{D} \in \mathbb{R}$. Overall, we design the observations for the policy as</p>
+            <div class="method-equation" role="region" tabindex="0" aria-label="Method equation">
+            \[
+            \bm{o}_t = [\bm{q}_t, \bm{q}^d_{t-1}, \textnormal{G}, \textnormal{S}, {f}_{\textnormal{tip}}, \textnormal{D}]
+            \]
+            </div>
+            <p>Note that $\bm{o}_t$ is directly available from the simulator during training in simulation. For real-world deployment, $\textnormal{S}$ and $\textnormal{D}$ are obtained from the instrumented setup. We directly measure $\bm{q}_t, \bm{q}^d_{t-1}$ from the robot and $\textnormal{G},{f}_{\textnormal{tip}}$ from tactile sensors. However, we do not consider the rotation progress of the lid and the positions of contact guides on the lid in the observation space, while they are provided to the value functions during training.</p>
+          </div>
+        </details>
       </div>
-      <figure class="paper-figure training-figure">
-        <a href="./medias/figures/hompage_training_3.pdf" target="_blank" rel="noopener noreferrer"
-           aria-label="Open the training diagram PDF in a new tab">
-          <img src="./medias/figures/hompage_training_3.svg" width="1800" height="900" loading="lazy"
-               alt="Training workflow: occupancy maps are converted into forcing functions, Poisson safety functions, and gradients to train FNO and DeepONet neural operators.">
+    </div>
+  </section>
+ 
+  <section class="section content-section" id="simulation" aria-labelledby="simulation-heading">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" id="simulation-heading">Simulation</h2>
+      <div class="content has-text-justified">
+        <p>We first validate the proposed reward design by comparing a tactile model, Tac2Motion that uses tactile observations and Joint model that relies solely on proprioceptive observations. Subsequently, we provide the comparative results across all methods, including the recent method to open a lid provided by <a href="./paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer" aria-label="Reference 7: Twisting lids off with two hands">[7]</a> as a baseline. Evaluation metric involves rotation score and adaptability, and all models are trained for $100$M steps with ten random seeds in a single-object setting and a multi-object setting (e.g. 11 objects) sampled from lid height and radius ranges of $[0.005, 0.02]$ m and $[0.025,0.04]$ m, respectively. For training, we uniformly sample the surface friction coefficient and rotational damping coefficient of the lid from $[0.01, 1.0]$ and $[1.0,3.0]$, respectively. Lastly, we further demonstrate the applicability of the proposed framework in a different scenario, lever opening as a supplementary case.</p>
+      </div>
+      <figure class="paper-figure simulation-figure" id="simulation-figure">
+        <div class="simulation-figure-grid">
+          <a href="./medias/figures/simulation_setups.pdf" target="_blank" rel="noopener noreferrer"
+             aria-label="Open the original training objects PDF in a new tab">
+            <img src="./medias/figures/simulation_setups.svg?v=20261113-cropped" width="369" height="241" loading="lazy"
+                 alt="Training objects with green lids and red bodies, cropped from the simulation setup figure.">
+            <span class="training-object-label">Training objects</span>
+          </a>
+          <a href="./medias/figures/simulation_setups_reward.pdf" target="_blank" rel="noopener noreferrer"
+             aria-label="Open the simulation performance PDF in a new tab">
+            <img src="./medias/figures/simulation_setups_reward.svg" width="907" height="794" loading="lazy"
+                 alt="Training reward curves comparing Tac2Motion and Joint Model, and rotation scores for single and multiple objects.">
+          </a>
+        </div>
+        <figcaption>
+          <strong>Figure 2.</strong>
+          (a)-(b) Rewards of trained policies under different observation settings across ten random seeds. Using tactile observations (Tac2Motion) improves training performance in both settings, leading to an improvement of approximately $29.72 \%$, over Joint model. (c)-(d) Rotation performance on single and multiple objects. The higher rotation scores of Tac2Motion indicate that using tactile-aware rewards with tactile observations improves policy performance under high rotational resistance levels.
+        </figcaption>
+      </figure>
+      <div class="content has-text-justified simulation-results">
+        <details class="method-details simulation-details" id="reward-design-validation">
+          <summary aria-controls="reward-design-validation-content">
+            <h3 class="title is-4 method-subheading">
+              <span>Reward Design Validation</span>
+              <span class="details-toggle">
+                <span class="details-more">more</span>
+                <span class="details-less">less</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </span>
+            </h3>
+          </summary>
+          <div class="details-content" id="reward-design-validation-content">
+            <p>We evaluate the proposed reward design under single and multi-object settings with two different observation settings: Joint model and Tac2Motion. As shown in Fig. <a href="#simulation-figure">2(a) and (b)</a>, we observe that the proposed reward shaping enables both models to successfully learn the lid opening task for 1.5 hours. Although both models can learn the task, as indicated by the increasing rewards, Tac2Motion achieves superior task performance compared with Joint model. Since both policies share the same reward design and training setup, this performance gap results from the use of additional tactile information, such as contact state, slippage, grasping force, and rotational resistance. This richer tactile information allows the agent to better distinguish diverse environment settings during rollouts. The simulation results under two settings show that tactile observations are particularly effective for adapting to object interaction dynamics that cannot be reliably inferred from proprioception alone. In addition, the proposed reward design can be generalized to various objects with different heights and radii.</p>
+          </div>
+        </details>
+        <details class="method-details simulation-details" id="validation-metrics">
+          <summary aria-controls="validation-metrics-content">
+            <h3 class="title is-4 method-subheading">
+              <span>Validation Metrics</span>
+              <span class="details-toggle">
+                <span class="details-more">more</span>
+                <span class="details-less">less</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </span>
+            </h3>
+          </summary>
+          <div class="details-content" id="validation-metrics-content">
+            <p>We assess the performance of each method under two metrics: average rotation score, defined as the average change in the lid angle, $\Delta q^{\textnormal{lid}}$, and adaptability. We test all models over ten seeds with 10 environments per seed under two object settings, uniformly sampling surface friction and rotational damping from both In-Distribution (ID) and Out-of-Distribution (OOD) ranges. For OOD setting, we set the rotational damping coefficient from $[3.0, 4.0]$.</p>
+          </div>
+        </details>
+        <details class="method-details simulation-details" id="task-performance">
+          <summary aria-controls="task-performance-content">
+            <h3 class="title is-4 method-subheading">
+              <span>Task Performance</span>
+              <span class="details-toggle">
+                <span class="details-more">more</span>
+                <span class="details-less">less</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </span>
+            </h3>
+          </summary>
+          <div class="details-content" id="task-performance-content">
+            <p>For each model trained with a single object with radius, $r=0.04$ and height, $h=0.02$, Tac2Motion achieves superior rotation performance compared with Base model and Joint model as shown in Fig. <a href="#simulation-figure">2(c)</a>. Since Base model is trained without tactile-aware rewards, it shows very limited performance in environments with high rotational resistance levels, which supports the effectiveness of the proposed reward design. Furthermore, to investigate generalization performance of each method, we train and evaluate each method on ten objects. Similarly, under the multi-object setting, Tac2Motion consistently outperforms the other methods in terms of rotation performance, further supporting its generalization capability across diverse objects with varying properties such as size, as shown in Fig. <a href="#simulation-figure">2(d)</a>.</p>
+          </div>
+        </details>
+      </div>
+      <figure class="paper-figure simulation-figure" id="adaptability-figure">
+        <a href="./medias/figures/graphs_figure_4.pdf" target="_blank" rel="noopener noreferrer"
+           aria-label="Open the adaptability performance PDF in a new tab">
+          <img src="./medias/figures/graphs_figure_4.svg" width="737" height="164" loading="lazy"
+               alt="Normalized contact force adaptability under in-distribution and out-of-distribution rotational resistance settings.">
         </a>
+        <figcaption>
+          <strong>Figure 3.</strong>
+          Adaptability performance of the trained policies. (a) and (b) show the normalized contact force adaptability under ID and OOD rotational resistance settings. Tac2Motion generally applies higher average contact forces across all fingertips as rotational resistance increases, which leads to the higher rotation performance as shown in Fig. <a href="#simulation-figure">2(c) and (d)</a>.
+        </figcaption>
+      </figure>
+      <section class="content has-text-justified delta-analysis-copy adaptability-callout" aria-labelledby="adaptability-heading">
+        <h3 class="title is-4" id="adaptability-heading">Adaptability</h3>
+        <p>The key advantage of Tac2Motion is the adaptability to object interaction dynamics such as surface friction and rotational resistance. To validate its adaptability, we plot average normalized contact forces of each method under both single and multi object settings over the level of rotational resistance. Note that Base model is excluded from this evaluation, as adaptability is not considered in its reward design. As shown in Fig. <a href="#adaptability-figure">3(a)</a>, under the single-object setting, Tac2Motion generally increases the average of the contact force across all fingertips as the level increases under ID and OOD settings, whereas Joint model does not. This is because the performance gap comes from the tactile-aware observation since the two models share the same reward design and hyperparameters. As a result, this adaptability leads to superior rotation performance during rollout, consistent with the results observed previously. Similarly, as shown in Fig. <a href="#adaptability-figure">3(b)</a>, Tac2Motion shows a similar trend under the multi-object setting, further supporting its adaptability and generalization across diverse object properties. These simulation results imply that both tactile-aware rewards and tactile observations are important for establishing adaptive force finger gaiting.</p>
+      </section>
+    </div>
+  </section>
+
+  <section class="section video-section content-section" id="experiments" aria-labelledby="experiments-heading">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" id="experiments-heading">Experiments</h2>
+      <div class="content has-text-justified experiment-setup">
+        <figure class="paper-figure experiment-setup-figure" id="real-setup-figure">
+          <a href="./medias/figures/real_setup.pdf" target="_blank" rel="noopener noreferrer"
+             aria-label="Open the experimental setup PDF in a new tab">
+            <img src="./medias/figures/real_setup.svg" width="184" height="184" loading="lazy"
+                 alt="Experimental setup with a UR10e arm, Shadow Hand, two depth cameras, calibration markers, and an instrumented lid-opening testbed.">
+          </a>
+        </figure>
+        <p>For our experiments, we utilize a 24-DoF Shadow Robot attached seventeen electromagnetic tactile sensors on each fingertip. The hand is mounted to a UR10e robot arm to facilitate our experiment, and the position of the lid is obtained from camera-based calibration with ArUco markers <a href="./paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer" aria-label="Reference 33: Automatic generation and detection of highly reliable fiducial markers under occlusion">[33]</a>. The lid used in the experiment is with a radius of $40$ mm and is attached to a single Dynamixel servo motor, where we vary the rotational resistance by controlling the motor current. For each method, we deploy the best policy selected from ten random seeds. We use a Dynamixel motor, XM-430 to generate rotational damping on the instrumented setup. During initializing the motor in position control mode, the motor is moved to zero and then switched to current control mode to apply a damping torque. We predefine multiple damping levels by assigning different damping coefficients $b_{\textnormal{d}}\in[0.01, 0.02, 0.04]$. After selecting a damping level, we measure the lid angular velocity, $\dot{q}^{\textnormal{lid}}$ from the motor, and compute the desired motor current as $I_{\textnormal{des}} = -b_{\textnormal{d}} \textnormal{tanh}(\dot{q}^{\textnormal{lid}}/\epsilon_{\textnormal{smooth}})$, where $\epsilon_{\textnormal{smooth}}$ smooths the current command. The desired current was converted to the Dynamixel raw current unit and then saturated before being sent as the goal current command to avoid hardware damage. This allows the Dynamixel motor to generate the rotational damping during lid opening.</p>
+      </div>
+      <h3 class="title is-4 experiment-subheading" id="experimental-validations">Experimental Validations</h3>
+      <div class="video-stack experiment-videos resistance-videos" id="resistance-videos">
+        <article class="video-card" aria-labelledby="low-resistance-heading">
+          <div class="video-frame">
+            <video controls playsinline autoplay muted loop preload="metadata" width="1280" height="720" tabindex="0"
+                   aria-label="Lid opening under low rotational resistance">
+              <source src="./medias/lowResistance.mp4" type="video/mp4">
+              Your browser does not support the video tag. <a href="./medias/lowResistance.mp4">Watch the low resistance video.</a>
+            </video>
+          </div>
+          <div class="video-caption">
+            <h3 class="title is-5" id="low-resistance-heading">Low resistance</h3>
+          </div>
+        </article>
+        <article class="video-card" aria-labelledby="medium-resistance-heading">
+          <div class="video-frame">
+            <video controls playsinline autoplay muted loop preload="metadata" width="1280" height="720" tabindex="0"
+                   aria-label="Lid opening under medium rotational resistance">
+              <source src="./medias/MedResistance.mp4" type="video/mp4">
+              Your browser does not support the video tag. <a href="./medias/MedResistance.mp4">Watch the medium resistance video.</a>
+            </video>
+          </div>
+          <div class="video-caption">
+            <h3 class="title is-5" id="medium-resistance-heading">Medium resistance</h3>
+          </div>
+        </article>
+        <article class="video-card" aria-labelledby="high-resistance-heading">
+          <div class="video-frame">
+            <video controls playsinline autoplay muted loop preload="metadata" width="1280" height="720" tabindex="0"
+                   aria-label="Lid opening under high rotational resistance">
+              <source src="./medias/HighResistance.mp4" type="video/mp4">
+              Your browser does not support the video tag. <a href="./medias/HighResistance.mp4">Watch the high resistance video.</a>
+            </video>
+          </div>
+          <div class="video-caption">
+            <h3 class="title is-5" id="high-resistance-heading">High resistance</h3>
+          </div>
+        </article>
+      </div>
+      <figure class="paper-figure experimental-results-figure" id="experimental-results">
+        <div class="experimental-table-scroll" role="region" aria-labelledby="experimental-results-caption" tabindex="0">
+          <table class="table is-fullwidth experimental-results-table" aria-describedby="experimental-results-caption">
+            <colgroup><col></colgroup>
+            <colgroup span="3"></colgroup>
+            <colgroup span="3"></colgroup>
+            <colgroup span="3"></colgroup>
+            <thead>
+              <tr>
+                <th scope="col" rowspan="2">Methods</th>
+                <th scope="colgroup" colspan="3" class="metric-group-start" id="experimental-contact-force">Normalized Contact Force</th>
+                <th scope="colgroup" colspan="3" class="metric-group-start" id="experimental-rotation">Rotation (deg)</th>
+                <th scope="colgroup" colspan="3" class="metric-group-start" id="experimental-force-distribution">Force Distribution</th>
+              </tr>
+              <tr>
+                <th scope="col" id="experimental-contact-force-low" class="metric-group-start">Low</th>
+                <th scope="col" id="experimental-contact-force-med">Med</th>
+                <th scope="col" id="experimental-contact-force-high">High</th>
+                <th scope="col" id="experimental-rotation-low" class="metric-group-start">Low</th>
+                <th scope="col" id="experimental-rotation-med">Med</th>
+                <th scope="col" id="experimental-rotation-high">High</th>
+                <th scope="col" id="experimental-force-distribution-low" class="metric-group-start">Low</th>
+                <th scope="col" id="experimental-force-distribution-med">Med</th>
+                <th scope="col" id="experimental-force-distribution-high">High</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="result-means">
+                <th scope="rowgroup" rowspan="2" id="experimental-baseline">Baseline <a href="./paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer" aria-label="Reference 7 in the paper">[7]</a></th>
+                <td class="metric-group-start" headers="experimental-baseline experimental-contact-force experimental-contact-force-low">0.6774</td>
+                <td headers="experimental-baseline experimental-contact-force experimental-contact-force-med">0.6724</td>
+                <td headers="experimental-baseline experimental-contact-force experimental-contact-force-high">0.6720</td>
+                <td class="metric-group-start" headers="experimental-baseline experimental-rotation experimental-rotation-low">7.4549</td>
+                <td headers="experimental-baseline experimental-rotation experimental-rotation-med">2.7780</td>
+                <td headers="experimental-baseline experimental-rotation experimental-rotation-high">1.4593</td>
+                <td class="metric-group-start" headers="experimental-baseline experimental-force-distribution experimental-force-distribution-low">0.0261</td>
+                <td headers="experimental-baseline experimental-force-distribution experimental-force-distribution-med">0.0259</td>
+                <td headers="experimental-baseline experimental-force-distribution experimental-force-distribution-high">0.0259</td>
+              </tr>
+              <tr class="result-standard-deviations">
+                <td class="metric-group-start" headers="experimental-baseline experimental-contact-force experimental-contact-force-low">$\pm$0.0226</td>
+                <td headers="experimental-baseline experimental-contact-force experimental-contact-force-med">$\pm$0.0174</td>
+                <td headers="experimental-baseline experimental-contact-force experimental-contact-force-high">$\pm$0.0133</td>
+                <td class="metric-group-start" headers="experimental-baseline experimental-rotation experimental-rotation-low">$\pm$0.792</td>
+                <td headers="experimental-baseline experimental-rotation experimental-rotation-med">$\pm$0.931</td>
+                <td headers="experimental-baseline experimental-rotation experimental-rotation-high">$\pm$1.018</td>
+                <td class="metric-group-start" headers="experimental-baseline experimental-force-distribution experimental-force-distribution-low">$\pm$0.0007</td>
+                <td headers="experimental-baseline experimental-force-distribution experimental-force-distribution-med">$\pm$0.0008</td>
+                <td headers="experimental-baseline experimental-force-distribution experimental-force-distribution-high">$\pm$0.0013</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="result-means">
+                <th scope="rowgroup" rowspan="2" id="experimental-joint-model">Joint model</th>
+                <td class="metric-group-start" headers="experimental-joint-model experimental-contact-force experimental-contact-force-low">0.5344</td>
+                <td headers="experimental-joint-model experimental-contact-force experimental-contact-force-med">0.5151</td>
+                <td headers="experimental-joint-model experimental-contact-force experimental-contact-force-high">0.5170</td>
+                <td class="metric-group-start" headers="experimental-joint-model experimental-rotation experimental-rotation-low"><strong>162.74</strong></td>
+                <td headers="experimental-joint-model experimental-rotation experimental-rotation-med">15.296</td>
+                <td headers="experimental-joint-model experimental-rotation experimental-rotation-high">11.622</td>
+                <td class="metric-group-start" headers="experimental-joint-model experimental-force-distribution experimental-force-distribution-low">0.0313</td>
+                <td headers="experimental-joint-model experimental-force-distribution experimental-force-distribution-med">0.0323</td>
+                <td headers="experimental-joint-model experimental-force-distribution experimental-force-distribution-high">0.0325</td>
+              </tr>
+              <tr class="result-standard-deviations">
+                <td class="metric-group-start" headers="experimental-joint-model experimental-contact-force experimental-contact-force-low">$\pm$0.0367</td>
+                <td headers="experimental-joint-model experimental-contact-force experimental-contact-force-med">$\pm$0.0332</td>
+                <td headers="experimental-joint-model experimental-contact-force experimental-contact-force-high">$\pm$0.0391</td>
+                <td class="metric-group-start" headers="experimental-joint-model experimental-rotation experimental-rotation-low">$\pm$10.800</td>
+                <td headers="experimental-joint-model experimental-rotation experimental-rotation-med">$\pm$2.421</td>
+                <td headers="experimental-joint-model experimental-rotation experimental-rotation-high">$\pm$1.764</td>
+                <td class="metric-group-start" headers="experimental-joint-model experimental-force-distribution experimental-force-distribution-low">$\pm$0.0013</td>
+                <td headers="experimental-joint-model experimental-force-distribution experimental-force-distribution-med">$\pm$0.0012</td>
+                <td headers="experimental-joint-model experimental-force-distribution experimental-force-distribution-high">$\pm$0.0017</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="result-means">
+                <th scope="rowgroup" rowspan="2" id="experimental-tac2motion">Tac2Motion</th>
+                <td class="metric-group-start" headers="experimental-tac2motion experimental-contact-force experimental-contact-force-low"><strong>0.8147</strong></td>
+                <td headers="experimental-tac2motion experimental-contact-force experimental-contact-force-med"><strong>0.9371</strong></td>
+                <td headers="experimental-tac2motion experimental-contact-force experimental-contact-force-high"><strong>1.0</strong></td>
+                <td class="metric-group-start" headers="experimental-tac2motion experimental-rotation experimental-rotation-low">135.94</td>
+                <td headers="experimental-tac2motion experimental-rotation experimental-rotation-med"><strong>37.028</strong></td>
+                <td headers="experimental-tac2motion experimental-rotation experimental-rotation-high"><strong>37.397</strong></td>
+                <td class="metric-group-start" headers="experimental-tac2motion experimental-force-distribution experimental-force-distribution-low"><strong>0.0125</strong></td>
+                <td headers="experimental-tac2motion experimental-force-distribution experimental-force-distribution-med"><strong>0.0117</strong></td>
+                <td headers="experimental-tac2motion experimental-force-distribution experimental-force-distribution-high"><strong>0.0110</strong></td>
+              </tr>
+              <tr class="result-standard-deviations">
+                <td class="metric-group-start" headers="experimental-tac2motion experimental-contact-force experimental-contact-force-low">$\pm$0.0849</td>
+                <td headers="experimental-tac2motion experimental-contact-force experimental-contact-force-med">$\pm$0.0187</td>
+                <td headers="experimental-tac2motion experimental-contact-force experimental-contact-force-high">$\pm$0.0158</td>
+                <td class="metric-group-start" headers="experimental-tac2motion experimental-rotation experimental-rotation-low">$\pm$17.959</td>
+                <td headers="experimental-tac2motion experimental-rotation experimental-rotation-med">$\pm$3.512</td>
+                <td headers="experimental-tac2motion experimental-rotation experimental-rotation-high">$\pm$2.868</td>
+                <td class="metric-group-start" headers="experimental-tac2motion experimental-force-distribution experimental-force-distribution-low">$\pm$0.0016</td>
+                <td headers="experimental-tac2motion experimental-force-distribution experimental-force-distribution-med">$\pm$0.0005</td>
+                <td headers="experimental-tac2motion experimental-force-distribution experimental-force-distribution-high">$\pm$0.0005</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption id="experimental-results-caption">
+          <strong>Table II.</strong>
+          Quantitative experimental results (45 trials in total) comparing methods across three rotational resistance levels: low, medium, and high. Each method is tested for five trials per condition, and the mean and standard deviation are provided for normalized contact force, rotation, and force distribution. We conduct each trial for about 40s.
+        </figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="section content-section" id="online-error-bound-estimation">
+  <section class="section content-section" id="supplementary-ablation" aria-labelledby="supplementary-ablation-heading">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" id="supplementary-ablation-heading">Supplementary Ablation Study</h2>
+      <div class="content has-text-justified">
+        <p>To further validate the design of the proposed tactile-aware reward function, we conduct a supplementary ablation study on its key components while keeping all other terms fixed. Specifically, we evaluate two variants: one using only the adaptive force control penalty, $r_{\textnormal{adapt}}$ and the other using both the adaptive force control and force distribution penalties, $r_{\textnormal{adapt}}+\lambda_{\textnormal{distr}}r_{\textnormal{distr}}$. Note that the full combination, $r_{\textnormal{adapt}} + \lambda_{\textnormal{distr}}r_{\textnormal{distr}}+\lambda_{\textnormal{gaiting}}r_{\textnormal{gaiting}}$, is not discussed here, as it is already analyzed in the main paper. We train each combination with three random seeds under the same conditions as the simulations conducted in the main paper. We evaluate the rotation score and adaptability performance in both single and multi object settings.</p>
+      </div>
+      <figure class="paper-figure supplementary-figure" id="supplementary-figure">
+        <a href="./medias/figures/graphs_figure_supplement.pdf" target="_blank" rel="noopener noreferrer"
+           aria-label="Open the supplementary ablation study PDF in a new tab">
+          <img src="./medias/figures/graphs_figure_supplement.svg" width="737" height="510" loading="lazy"
+               alt="Ablation results comparing rotation performance and normalized contact force using the adaptive force penalty alone or combined with the force distribution penalty, under single and multi object settings.">
+        </a>
+        <figcaption>
+          <strong>Figure 4.</strong>
+          Ablation study results evaluating the impact of each reward-function component. We show the rotation performance under single and multi object settings, considering two variants: (a) using only the adaptive force control penalty and (b) using both the adaptive force control penalty and the force distribution penalty. (c) and (d) show the normalized contact force from the learned policy using only the adaptive force control penalty, while (e) and (f) show those from the learned policy using both penalties.
+        </figcaption>
+      </figure>
+      <div class="content has-text-justified">
+        <p>As shown in Figure <a href="#supplementary-figure">4(a)</a>, using only $r_{\textnormal{adapt}}$, Tac2Motion achieves superior performance compared with Joint Model in both object settings because tactile observations allow the policy to better utilize the force-related reward signal and end up improving the task performance. In contrast, without tactile observations, Joint Model cannot directly infer contact-force conditions, which deteriorates task performance rather than improving it. This result especially shows the importance of using tactile observation under different resistance conditions. For adaptability, Tac2Motion increases the normalized contact force as rotation resistance is increased, as shown in Figure <a href="#supplementary-figure">4(c) and (d)</a>, while Joint Model does not show adaptation. Additionally, it is observed that fluctuations occur Figure <a href="#supplementary-figure">4(d)</a>, but these fluctuations are mitigated when the force distribution penalty is additionally considered in the following.</p>
+        <p>When we add force distribution, $r_{\textnormal{adapt}}+\lambda_{\textnormal{distr}}r_{\textnormal{distr}}$, Joint Model improves its task performance, as shown in Figure <a href="#supplementary-figure">4(b)</a>. This improvement can be attributed to the force distribution penalty, which provides a more structured reward signal where the policy can indirectly access contact force across fingers. This allows the policy to learn the contact interaction even without tactile observations. However, Tac2Motion still outperforms Joint Model in terms of rotation score while maintaining enhanced adaptability, as shown in Figure <a href="#supplementary-figure">4(e) and (f)</a>. Overall, Tac2Motion demonstrates superior task performance and adaptability compared with Joint Model. This analysis highlights the role of each reward component and the importance of tactile observations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content-section" id="limitations" aria-labelledby="limitations-heading">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" id="limitations-heading">Limitations</h2>
+      <div class="content has-text-justified">
+        <p>While the proposed framework demonstrates adaptive force finger gaiting, several limitations should be explored. First, our real-world evaluation is conducted on a single lid-opening setup with a fixed object geometry even though we evaluate multiple object sizes in simulation. Extending the proposed framework to a broader range of real-world objects might be a potential future work. Second, the real-world deployment relies on an instrumented setup to obtain tactile-aware observations such as slip and rotational damping. Removing this dependency and inferring interaction dynamics directly from tactile signals would improve the applicability of the method <a href="./paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer" aria-label="Reference 5: PTLD: Sim-to-Real Privileged Tactile Latent Distillation">[5]</a>. Lastly, the proposed method may be viewed as relying on task-specific reward design, but we emphasize that such design is essential for specifying the target behavior rather than being a minor reward engineering, and can be extended to diverse contact-rich tasks beyond lid opening. Furthermore, the finger gaiting reward could be removed by leveraging human demonstrations to provide initial policies, followed by tactile-aware reward design for learning adaptability through imitation-bootstrapped reinforcement learning (<a href="https://roboticsproceedings.org/rss20/p056.html" target="_blank" rel="noopener noreferrer" aria-label="Hu et al., 2024: Imitation Bootstrapped Reinforcement Learning">Hu et al., 2024</a>).</p>
+      </div>
+    </div>
+  </section>
+
+  <!--<section class="section content-section" id="online-error-bound-estimation">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Online Error Bound Estimation</h2>
       <h3 class="section-question">
@@ -292,7 +672,7 @@
         </figure>
       </div>
     </div>
-  </section>
+  </section> -->
 
 <!-- 
   <section class="hero teaser">
@@ -440,7 +820,7 @@
     </div>
   </section> -->
 
-  <section class="section video-section content-section" id="videos">
+  <!-- <section class="section video-section content-section" id="videos">
     <div class="container is-max-widescreen">
       <h2 class="title is-3 has-text-centered mb-5">Simulations</h2>
       <div class="content has-text-justified">
@@ -709,7 +1089,7 @@
       <h2 class="title is-3">BibTeX</h2>
       <pre><code></code></pre>
     </div>
-  </section>
+  </section> -->
 
   <footer class="footer">
     <div class="container">
@@ -720,6 +1100,7 @@
               Website design adapted from <a href="https://lujieyang.github.io/physicsgen/">PhysicsGen</a>
               and the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project-page template</a>.
             </p>
+            <p><small>This page was created with the assistance of Codex. In case of any discrepancies, the original paper takes precedence.</small></p>
           </div>
         </div>
       </div>
